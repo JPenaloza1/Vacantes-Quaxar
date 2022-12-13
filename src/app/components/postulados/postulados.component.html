@@ -1,0 +1,27 @@
+<div class="card mx-auto" >
+    <div class="card-body">
+        <h3>Postulados</h3>
+        <table class="table text-center mx-auto">
+            <thead>
+                <tr>
+                    <th>Puesto</th>
+                    <th>Correo</th>
+                    <th>Curriculum</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let postulado of postulados ">
+                    <td>{{postulado.puesto}}</td>
+                    <td>{{postulado.email}}</td>
+                    <td>
+                        <a href="{{ postulado.cv | getDownloadURL }}" target="_blank">CV</a>
+                    </td>
+                    <td>
+                        <a (click)="deleteVacante(postulado.id)" class="btn btn-danger" >eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="wrapper">
+    <app-spinner *ngIf="loading"></app-spinner>
+    <div class="body" *ngIf="!loading">
+        <img class="logo" src="../../../assets/img/login.png" alt="login">
+        <form (ngSubmit)="register()" [formGroup]="registerUser">
+            <h1 class="text-center mb-3">Registrar usuario</h1>
+            <div class="form-floating mb-3">
+              <input formControlName="business" type="text" class="form-control" id="business" placeholder="n">
+              <label for="business">Nombre de la empresa</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Correo</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Contraseña</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input formControlName="repeatPassword" type="password" class="form-control" id="floatingPasswordR" placeholder="Password">
+                <label for="floatingPasswordR">Repetir contraseña</label>
+              </div>
+              <button class="btn btn-primary btn-lg mt-3" type="submit">
+                    Crear
+              </button>
+              <p class="mt-3"> <a routerLink="/login">Volver</a></p>
+        </form>
+    </div>
+    
+    
+</div>
+
+

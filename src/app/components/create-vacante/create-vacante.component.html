@@ -1,0 +1,49 @@
+<div class="wrapper" >
+  <app-spinner *ngIf="loading"></app-spinner>
+  <div class="body body-lg" *ngIf="!loading">
+    <form [formGroup]="createVacante" (ngSubmit)="submitVacante()" class="row">
+      
+      <h2 class="text-center mb-3">{{titulo}} vacante</h2>
+      
+      <div class=" mb-3 col-6">
+        <label for="area">Área</label>
+        <input formControlName="area" type="text" class="form-control" id="area" placeholder="Ej. Informatica">
+      </div>
+      
+      <div class="mb-3 col-6">
+        <label for="puesto">Puesto</label>
+        <input formControlName="puesto" type="text" class="form-control" id="puesto" placeholder="Ej. Soporte técnico">
+      </div>
+
+      <div class="col-6 mb-3">
+        <label for="salario">Salario</label>
+        <input formControlName="salario" type="number" class="form-control" id="salario" placeholder="Ej. 5000">
+      </div>
+
+      <div class="col-6 mb-3">
+        <label for="horario">Horario</label>
+        <select formControlName="horario" class="form-control" id="horario">
+          <option value="Parcial">Parcial</option>
+          <option value="Completo">Completo</option>
+        </select>
+      </div>
+
+      <div class="col-12 mb-3">
+        <label for="salario">Empresa</label>
+        <input formControlName="empresa" type="text" class="form-control" id="salario" placeholder="Ej. Quaxar SA de CV">
+      </div>
+
+      <div class="col-12 mb-3">
+        <label for="direccion">Dirección</label>
+        <textarea formControlName="direccion" class="form-control" id="direccion" placeholder="Mexico DF. Avenida Los Reyes "></textarea>
+      </div>
+
+      <div class="col-12 mb-3">
+        <label for="actividades">Actividades</label>
+        <textarea formControlName="actividades" class="form-control" id="actividades" rows="6" placeholder="Ej. Revisar, mantener y reparar equipos informáticos"></textarea>
+      </div>
+
+      <button class="btn btn-primary btn-lg mt-3" type="submit">Guardar</button>
+    </form>
+  </div>
+</div>

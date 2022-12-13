@@ -1,0 +1,21 @@
+
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <a routerLink="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img style="width:50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png" alt="">
+        </a>
+  
+        <ul *ngIf="(loggedIn$ | async)"  class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a routerLink="/list" class="nav-link px-2 ">Vacantes registradas</a></li>
+          <li><a routerLink="/create"class="nav-link px-2 ">Crear nueva vacante</a></li>
+          <li><a routerLink="/postulados"class="nav-link px-2">Postulados</a></li>
+
+        </ul>
+  
+        <div class="col-md-3 text-end">
+        <a *ngIf="(loggedIn$ | async)" (click)="logOut()" class="btn btn-outline-primary me-2">Cerrar sesión</a>
+        <a *ngIf="!(loggedIn$ | async)" routerLink="/login" class="btn btn-outline-primary me-2">Inicio sesión</a>
+        <a *ngIf="!(loggedIn$ | async)" routerLink="/register" class="btn btn-primary">Registrarse</a>
+        </div>
+      </header>
+    
+

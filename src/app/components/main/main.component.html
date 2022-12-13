@@ -1,0 +1,62 @@
+<div class="fondo-azul">
+<h1>Vacantes</h1>
+</div>
+<div class="wrapper">
+    <div class="card mt-3">
+        <div class="card-body">
+            <h3 style="text-align: center;">¡VACANTES DISPONIBLES!</h3>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <app-spinner *ngIf="loading"></app-spinner>
+                    <form [formGroup]="search" (ngSubmit)="searchVacante()">
+                        <div class="input-group">
+                            <div class="form-floating mb-3">
+                                <select formControlName="key" class="form-control" id="inpType">
+                                    <option value="area">Área</option>
+                                    <option value="puesto">Puesto</option>
+                                </select>
+                                <label for="inpType">Opción</label>
+                            </div>
+                            <div class="form-floating">
+                                <input formControlName="value" type="text" class="form-control" id="inpValue" placeholder="AAA" >
+                                <label for="inpValue">Buscador</label>
+                            </div>
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary busc" >
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-10 offset-md-1">
+                    <div class="list-group">
+                        <div class="list-group-item" *ngFor="let vacante of vacantes">
+                            <div class="row">
+                                <div class="col-1">
+                                    <i class="fa fa-star" style="display: inline;"></i>
+                                </div>
+                                <div class="col px-4">               
+                                    <div >
+
+                                        <div class="float-right">{{ vacante.fecha.toDate() | date:"medium"}}</div>
+                                        <h3>{{ vacante.puesto }}</h3>
+                                        <p class="mb-0"> {{ vacante.area }} </p>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-success" [routerLink]="['/info/',vacante.id]"  style="margin-top: 30px;">Ver más</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</div>

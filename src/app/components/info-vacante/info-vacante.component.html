@@ -1,0 +1,50 @@
+<div class="main">
+    <div class="child">
+        <a class="volver" [routerLink]="['/']" ><i class="fa fa-arrow-left"></i></a>
+        <h1>{{ puesto }}</h1>
+        <h2>empresa de prueba</h2>
+        <p>{{ direccion }}</p>
+    </div>
+    <div class="postular">
+        <app-spinner *ngIf="loading"></app-spinner>
+        <form [formGroup]="createPostulante" class="text-center" (ngSubmit)="addPostulante()">
+            <h3>Postularse</h3>
+            <label for="email" class="">Ingresa tu correo</label>
+            <input formControlName="email" type="email" class="form-control mb-3" placeholder="Ej. ejemplo@gmail.com">
+            <input type="file" (change)="uploadFile($event)">
+            <button type="submit" class="btn btn-primary mt-3">Postularme</button>
+        </form>
+    </div>
+</div>
+
+<div class="div-body">
+    <h2 class="head">Detalles del empleo</h2>
+    <div class="row" style="width: 70%;">
+        <div class="col-6 mb-2">
+            <span class="field"> Salario:</span>
+        </div>
+        <div class="col-6 mb-2">
+            <span class="field">{{salario | currency}}</span>
+        </div>
+        <div class="col-6 mb-2">
+            <span class="field">Tipo de empleo:</span>
+        </div>
+        <div class="col-6 mb-2">
+            <span class="field">{{horario}}</span>
+        </div>
+        <div class="col-6 mb-2">
+            <span class="field">Puesto:</span>
+        </div>
+        <div class="col-6 mb-2">
+            <span class="field">{{puesto}}</span>
+        </div>
+        <div class="col-6 mb-2">
+            <span class="field">Empresa:</span>
+        </div>
+        <div class="col-6 mb-2">
+            <span class="field">{{empresa}}</span>
+        </div>
+    </div>
+    <h2 class="head mt-2">Descripción del empleo</h2>
+    <p class="description">{{ actividades }}</p>
+</div>

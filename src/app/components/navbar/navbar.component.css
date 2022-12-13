@@ -1,0 +1,9 @@
+header{
+    font-weight: bold;
+}
+.nav-link{
+    color:rgb(46, 73, 122)
+}
+.nav-link:hover{
+    color:rgb(99, 143, 224)!important;
+}
