@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     
     this.loading=true;
     
-    this.afAuth.signInWithEmailAndPassword(email,password).then(user =>{
+    this.afAuth.signInWithEmailAndPassword( email , password ).then(user => {
       this.router.navigate(['list'])
     }).catch((error) =>{
       let message = this.firebaseError(error.code)

@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgToastService } from 'ng-angular-popup';
-import { Observable } from 'rxjs';
 import { VacanteService } from 'src/app/services/vacante.service';
 
 @Component({

@@ -18,8 +18,8 @@ const routes: Routes = [
   {path: 'edit/:id', component:CreateVacanteComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'recover-password',component:RecoverPasswordComponent},
-  {path:'postulados',component:PostuladosComponent},
-  {path:'info/:id',component:InfoVacanteComponent},
+  {path: 'postulados',component:PostuladosComponent},
+  {path: 'info/:id',component:InfoVacanteComponent},
   {path: '**',redirectTo:'',pathMatch:'full'},
 ];
 

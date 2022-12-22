@@ -23,7 +23,7 @@ export class VacanteService {
   updateVacante(id:string,data:any):Promise<any>{
     return this.firestore.collection('vacante').doc(id).update(data);
   }
-  filterVacante(field:string,keyword:string):Observable<any>{
-    return this.firestore.collection("vacante",ref =>ref.where(field,">=",keyword )).snapshotChanges()
+  filterVacante( field:string , keyword:string ) : Observable<any> {
+    return this.firestore.collection("vacante",ref =>ref.where( field , "==" , keyword )).snapshotChanges();
   }
 }

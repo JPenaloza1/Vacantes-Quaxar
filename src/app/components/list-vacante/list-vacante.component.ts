@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgToastService } from 'ng-angular-popup';
 import { VacanteService } from 'src/app/services/vacante.service';
 
@@ -12,6 +12,7 @@ export class ListVacanteComponent implements OnInit{
   
   vacantes : any[]   = [];
   loading  : boolean = false;
+  @Input() empresa  : string;
   
   constructor( 
     private _vacanteService: VacanteService, 
